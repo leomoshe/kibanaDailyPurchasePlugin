@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+ 
+
+ 
+<link rel="stylesheet" href="lib/jquery-ui/themes/smoothness/jquery-ui.min.css">
+
+<script data-require="angular.js@1.2.16" data-semver="1.2.16" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="script.js"></script>
+
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/jquery-ui/ui/widget.js"></script>
+<script src="lib/jquery-ui/ui/widgets/datepicker.js"></script>
+
+</head>
+<body ng-app="tutorial1">
+
+
+
+
+
+ 
+
+<div ng-controller="controller">
+<h1>Hello {{name}}!</h1>
+<input type="text" ng-model="name"/>
+</div>
+
+<div id="projects">
+<script>
+    $( "#projects" ).datepicker();
+</script>
+
+</body>
+</html>

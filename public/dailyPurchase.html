@@ -1,0 +1,31 @@
+<div ng-controller="DailyPurchaseController as dailyPurchaseController">
+    &nbsp;Week Range:&nbsp;&nbsp;<input id="dp" vod-daily-purchase-week-picker type="text" ng-model="dailyPurchaseController.selectedDateRange"  range-week="dailyPurchaseController.rangeWeek"  size=30/>
+    <style>
+        #divPurchaseTable table, #divPurchaseTable th, #divPurchaseTable td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        #divPurchaseTable table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        #divPurchaseTable table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        
+    </style>
+    <div id="divPurchaseTable" vod-daily-purchase-table-directive data="dailyPurchaseController.tvods_by_date"></div>
+    &nbsp;<small>Export:</small>&nbsp;&nbsp;
+    <a ng-click="exportDivTableAsCsv('divPurchaseTable')" class="small">    
+      Raw <i aria-hidden="true" class="fa fa-download"></i>
+    </a>
+    <br><br><br>
+    <div id="divPurchaseGraphDevices" vod-daily-purchase-graph-directive data="dailyPurchaseController.tvods_week_devices" options="dailyPurchaseController.tvods_week_devices_info" style="border:2px solid;border-radius:15px;background-color:#C8C8C8;"></div>
+    <br>
+    <div id="divPurchaseGraphDevicesLabels"></div>
+    <br><br><br>
+    <div id="divPurchaseGraphTotals" vod-daily-purchase-graph-directive data="dailyPurchaseController.tvods_week_total" options="dailyPurchaseController.tvods_week_total_info" style="border:2px solid;border-radius:15px;background-color:#C8C8C8;"></div>
+    <br>
+    <div id="divPurchaseGraphTotalsLabels"></div>
+    <div ng-init="dailyPurchaseController.ready()"></div>
+</div>
